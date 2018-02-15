@@ -4,13 +4,20 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "heroku-prebuild": "npm install -g http-server",
+    "heroku-postbuild": "ng build --prod",
+    "start": "http-server dist/",
     "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
+  
   "private": true,
+  "engines": {
+    "node": "6.11.0",
+    "npm": "3.10.10"
+  },
   "dependencies": {
     "@angular/animations": "^5.2.0",
     "@angular/common": "^5.2.0",
@@ -23,7 +30,13 @@
     "@angular/router": "^5.2.0",
     "core-js": "^2.4.1",
     "rxjs": "^5.5.6",
-    "zone.js": "^0.8.19"
+    "zone.js": "^0.8.19",
+    "_comment": "the succeeding lines are taken from devDependencies",
+    "@angular/cli": "1.6.8",
+    "@angular/compiler-cli": "^5.2.0",
+    "typescript": "~2.5.3",
+    "@types/jasminewd2": "~2.0.2",
+    "@types/node": "~6.0.60"
   },
   "devDependencies": {
     "@angular/cli": "1.6.8",
